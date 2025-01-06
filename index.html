@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background: linear-gradient(to right, rgb(0, 0, 136), rgb(77, 77, 238));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .overall {
+            background-color: white;
+            text-align: center;
+            width: 28%;
+            border-radius: 13px;
+            padding:25px 40px 25px 40px;
+            display: grid;
+            gap: 10px;
+        }
+        .tab {
+            display: flex;
+            justify-content: center;
+            border: 1px solid rgb(177, 175, 175);
+            border-radius: 16px;
+        }
+        .loginbut, .signupbut {
+            
+            font-size: 17px;
+            border: none;
+            border-radius: 16px;
+            cursor: pointer;
+            width: 100%;
+            padding: 12px;
+        }
+        .loginbut {
+            background: linear-gradient(to right, rgb(0, 0, 136), rgb(77, 77, 238));
+            color: white;
+        }
+        .signupbut {
+            background: transparent;
+            color: black;
+        }
+        input {
+            padding: 10px 50px;
+            border-radius: 14px;
+            border: 1px solid rgb(121, 120, 120);
+            box-shadow: 1px 2px rgb(173, 172, 172) ;
+            font-size: 17px;
+            margin: 20px 0;
+            text-align-last: left;
+        }
+        .form {
+            display: grid;
+            text-align: left;
+            
+        }
+        .text, .text3 {
+            color: blue;
+            cursor: pointer;}
+            .text{
+margin-top: -11px;
+            }
+        
+        .text2 {
+            text-align: center;
+        }
+        .finallog {
+            padding: 14px 50px;
+            background: linear-gradient(to right, rgb(0, 0, 136), rgb(77, 77, 238));
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 17px;
+        }
+        .tabcontent {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="overall">
+        <h1>Login Form</h1>
+        <div class="tab">
+            <button class="loginbut" onclick="opentab('login')">Login</button>
+            <button class="signupbut" onclick="opentab('signup')">Signup</button>
+        </div>
+        <div id="login" class="tabcontent">
+            
+            <form class="form" onsubmit="login()">
+                <input type="email" placeholder="Email Address" required>
+                <input type="password" placeholder="Password" required>
+                <p class="text">Forgot password?</p>
+                <button class="finallog"  value="submit">Login</button>
+                <p class="text2">Not a member? <span class="text3" onclick="opentab('signup')">Signup now</span></p>
+            </form>
+        </div>
+        <div id="signup" class="tabcontent">
+            <form class="form" onsubmit="signup()">
+                <input type="text" placeholder="User id" required>
+                <input type="text" placeholder="Email Address" required>
+                <input type="password" placeholder="Enter Password" required>
+                <button class="finallog" >Sign Up</button>
+                <p class="text2">Already a member? <span class="text3" onclick="opentab('login')">Login here</span></p>
+                
+            </form>
+        </div>
+    </div>
+    <script src="/script.js"></script>
+</body>
+</html>
